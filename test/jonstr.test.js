@@ -7,5 +7,16 @@ test('renders a simple object to string', t => {
     family: 'jazi'
   }
 
-  t.assert(jonstr(obj) === 'armin, jazi')
+  t.assert(jonstr(obj, 'name, family') === 'armin, jazi')
+})
+
+test('renders a nested object to string', t => {
+  const obj = {
+    street: 'elmstreet',
+    number: 10,
+    city: 'Cologne',
+    country: 'Germany'
+  }
+
+  t.assert(jonstr(obj, 'street, number, city, country') === 'elmstreet, 10, Cologne, Germany')
 })
