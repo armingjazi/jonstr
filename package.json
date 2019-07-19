@@ -1,0 +1,33 @@
+{
+  "name": "jonstr",
+  "version": "1.0.0",
+  "repository": "https://github.com/tetrohed/jonstr.git",
+  "author": "tetrohed <armin65@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^2.2.0",
+    "eslint": "6.0.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.1",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "husky": "^3.0.1"
+  },
+  "scripts": {
+    "test": "ava"
+  },
+  "ava": {
+    "require": [
+      "esm"
+    ]
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint lib --fix && yarn test"
+    }
+  }
+}
